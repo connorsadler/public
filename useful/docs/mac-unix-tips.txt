@@ -1,2 +1,22 @@
 
 TODO
+
+
+
+
+pman on mac
+-----------
+See thread: https://www.reddit.com/r/commandline/comments/yx2aqn/open_man_pages_in_previewapp_in_macos_ventura/
+
+    Stick this code in your ~/.zshrc
+
+    function pman
+    { 
+        CMD_NAME=$1 
+        whereis -qm $CMD_NAME | xargs cat | mandoc -T pdf | open -f -a /System/Applications/Preview.app 
+    }
+    Then call it using pman <command_name>.
+    So if you want to see the man page for the cp command you'd do:
+        pman cp
+
+
