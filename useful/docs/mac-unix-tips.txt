@@ -20,3 +20,12 @@ See thread: https://www.reddit.com/r/commandline/comments/yx2aqn/open_man_pages_
         pman cp
 
 
+Mac - disable default Control+Command+D shortcut
+------------------------------------------------
+
+https://apple.stackexchange.com/questions/22785/how-do-i-disable-the-command-control-d-word-definition-keyboard-shortcut-in-os-x
+
+To disable the Control-Command-D binding enter the following in the terminal:
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+and restart.
+
