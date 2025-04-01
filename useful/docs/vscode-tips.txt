@@ -17,7 +17,18 @@ vscode + go - running files
 1. Install "Code Runner" extension
 2. Use "Run Code" command in Vscode to run your code  (bind to: Ctrl + R)
 3. You may need a .vscode/launch.json as shown below
-4. Use "Stop Code Run" to stop the run  (bind to: Ctrl + Opt + R)
+4. You may need settings json entries for "code-runner" - see below
+5. Use "Stop Code Run" to stop the run  (bind to: Ctrl + Opt + R)
+
+
+Sample settings json entries
+
+    "code-runner.executorMap": {
+        "go": "cd $dir && go run $fileName",
+    },
+    "code-runner.executorMapByGlob": {
+        "$dir/*.go": "go"
+    }
 
 
 Sample .vscode/launch.json
