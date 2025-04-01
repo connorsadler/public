@@ -1,15 +1,26 @@
 
 TODO
 
+git - default commit message
+----------------------------
+
+https://stackoverflow.com/questions/39445199/how-to-make-visual-studio-code-remember-previous-commit-messages
+
+echo "stuff" > .mycommitmsg.txt
+git config --local commit.template .mycommitmsg.txt
+
 
 
 vscode + go - running files
 ---------------------------
 
 1. Install "Code Runner" extension
-2. Use "Run Code" command in Vscode to run your code
+2. Use "Run Code" command in Vscode to run your code  (bind to: Ctrl + R)
+3. You may need a .vscode/launch.json as shown below
+4. Use "Stop Code Run" to stop the run  (bind to: Ctrl + Opt + R)
 
-3. You may need a .vscode/launch.json like this:
+
+Sample .vscode/launch.json
 
     {
         // Use IntelliSense to learn about possible attributes.
