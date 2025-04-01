@@ -1,0 +1,18 @@
+
+1. System Settings > Keyboard > Keyboard Shortcuts
+      1.1. Function Keys > Use F1, F2, etc. keys as standard function keys - ensure this is switched ON
+      1.2. Function Keys > Ensure no Mac OS commands conflict with Intellij e.g. Cmd+Shift+A, Cmd+Shift+C, Cmd+Shift+B, Cmd+Shift+L
+
+2. Classic UI (optional)
+      Install the Classic UI plugin - see: https://stackoverflow.com/questions/73566613/how-can-i-move-back-to-old-intellij-idea-ui
+
+3. Disable these:
+      Settings -> Inlay Hints -> Code vision
+
+4. Disable Sticky Lines:
+      Editor -> General -> Sticky Lines -> Disable
+
+5. Keyboard shortcuts
+      Expand view with keyboard:          XXX               Want: Shift+Cmd+Up
+
+
