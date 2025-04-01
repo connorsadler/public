@@ -29,3 +29,11 @@ To disable the Control-Command-D binding enter the following in the terminal:
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
 and restart.
 
+
+
+Dropbox mac - symbolic link
+---------------------------
+
+ln -s "/Users/connor/Dropbox/" "/Users/connor/Dropbox (Connor Work Dropbox)/"
+
+
