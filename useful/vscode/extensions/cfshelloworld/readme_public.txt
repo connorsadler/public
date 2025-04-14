@@ -1,6 +1,6 @@
 
 
-You need "todohighlight" extension also
+You need "TODO Highlight" extension also
 
 You need these in your settings.json:
 
