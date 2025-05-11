@@ -54,3 +54,245 @@ Sample .vscode/launch.json
             }
         ]
     }
+
+
+--------------------------------------------------------------------------------
+Keyboard shortcuts
+--------------------------------------------------------------------------------
+
+(https://superuser.com/questions/1270103/how-to-switch-the-cursor-between-terminal-and-code-in-vscode)
+
+Keyboard shortcuts                                  Windows             Mac
+
+- Command Palette (aka Show All Commands)           -                   Cmd + Shift + P
+
+- Go to Definition                                  Alt + B             Cmd + B                         (changed from F12 default)
+                                                    Ctrl + B
+
+- Go back                                           Alt + Left          Cmd + [
+
+- terminal:                                         ALT + F12           Alt + F12
+    workbench.action.terminal.focus
+- focus editor (back to editor)                     ALT+K, ALT+E        Cmd+K, Cmd+E
+    workbench.action.focusActiveEditorGroup
+- explorer (press twice to get to code editor)      -                   Cmd + Shift + E
+- last edit location                                -                   Cmd + Shift + Backspace         (or use vscode default, Cmd+K->Cmd+Q)
+    workbench.action.navigateToLastEditLocation
+- switch window                                     -                   Opt + A                         (old: Ctrl + W)
+                                                                        (or use Mac OS tab keys)
+
+- delete line                                       -                   Cmd + Backspace                 (changed from vscode default)
+    editor.action.deleteLines
+- open file                                         -                   Cmd + P
+- open symbol in workspace                          -                   Cmd + T
+- navigate to function                              -                   Cmd + Shift + O
+    workbench.action.gotoSymbol (Go to Symbol in Editor)
+
+- Run Test at cursor                                -                   Cmd+; , C
+- Run Tests in file                                 -                   Cmd+; , F
+- Run Last test                                     -                   Cmd+; , L
+- Debug Last test                                   -                   Cmd+; , Cmd+L
+
+- Parameter hints                                   -                   Shift + Cmd + Space             (works OK, doesnt work in Go when cursor is after open bracket)
+- Show Definition Preview Hover                     -                   Cmd + K, Cmd + O
+- Info?                                             -                   Cmd + I
+- Info?                                             -                   Cmd + K, Cmd + I
+- Briefly show parameter nanes                      -                   Ctrl + Alt
+                                                                        Related to: "editor.inlayHints.enabled": "offUnlessPressed" - see: https://stackoverflow.com/questions/68698269/how-can-i-toggle-inlay-hints-in-vs-code
+
+- View: Toggle Render Whitespace                    -                   (no shortcut, use from command palette)
+
+- Snippets                                          -                   -
+    Snippets: Configure User Snippets
+
+(Extension: Go to Next/Previous Member)
+- Go to Next Member                                 -                   Ctrl + Shift + Down
+- Go to Previous Member                             -                   Ctrl + Shift + Up
+
+- Git (Source Control view)                         -                   Shift + Cmd + G
+- Git Commit                                        -                   Cmd + Enter  (when in commit message)
+- Git Push                                          -                   Cmd + K, Cmd + P
+- Git Graph                                         -                   Shift + Cmd + Alt + G       My custom shortcut
+- Open Changes with Previous Revision               -                   Opt + Cmd + G -> ,
+    aka Show Diffs or Show Changes
+    (added to Quick Menu - see below)
+- Gitlens: Open Changes with Branch or Tag          -                   -                           Useful to get stuff from other branches
+- Git: Checkout to...                               -                   Cmd + Shift + M             My custom shortcut, to mimic Intellij branch list
+
+- Comparing branches                                -                   -                           See "Comparing branches" below
+- GitLens: Compare References...                    -                   -                           See "Comparing branches" below
+
+- Open Quick Menu                                   -                   Alt + Cmd + C               Open CFS Quick Menu
+
+- Developer: Reload Windows                         -                   -
+    Refresh when Git was showing green (emphasised) items in a dir that was ignored
+
+- Show Context Menu (right click menu)              -                   Shift + F10
+
+- Hide panel                                        -                   None                Not very useful, only hides bottom panel (aka Close/Hide current display / panel)
+- Toggle Primary Side Bar Visibility                -                   Cmd + K, H          Hide Explorer tree - My shortcut, default is Cmd+B. Note: You can do this by clicking Explorer twice
+- View: Hide Activity Bar                           -                   -                   List of icons (e.g. Explorer) is called the Activity Bar, which has a 'position' of Hidden
+
+
+Extensions
+----------
+Compare folder / compare directories
+    1. Compare folders: https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders
+    2. Diff folders: https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-diff&ssr=false#review-details
+
+Go
+--
+Go issue with running code
+- https://stackoverflow.com/questions/70859607/vscode-code-runner-cannot-run-multi-go-files
+
+Comparing branches
+------------------
+It's a bit of a pain:
+    https://stackoverflow.com/questions/42112526/how-to-compare-different-branches-in-visual-studio-code
+
+OPTION A: Command palette -> GitLens: Compare References...
+
+OPTION B: gitgraph to the rescue, see following answer from the above link:
+    This is possible (and much simpler) without GitLens, using only the Git Graph plugin.
+    With your Git Graph open, click on the first commit you want to compare, and then Ctrl/Cmd + Click on your second commit.
+    Both lines will be highlighted. The commit details will now display all differences between A and commit B, allowing you to compare any 
+    two commits across branches or from the same branch.
+
+
+Java
+----
+
+Commands from Palette:
+    Source Action...     (right click file - or Shift+F10)
+    Refactor
+
+
+Code Runner
+-----------
+Notes:
+    https://github.com/formulahendry/vscode-code-runner
+
+You can search "settings.json" for this:
+    code-runner.executorMap
+
+
+Git - default commit message
+----------------------------
+
+https://stackoverflow.com/questions/39445199/how-to-make-visual-studio-code-remember-previous-commit-messages
+    echo "stuff" > .mycommitmsg.txt
+    git config --local commit.template .mycommitmsg.txt
+
+
+
+
+txt file - disable popup suggestions
+------------------------------------
+
+txt file is referred to as "plaintext" in vscode
+
+solution to disable popup suggestions:
+    https://stackoverflow.com/questions/71049196/how-can-i-turn-off-auto-complete-for-txt-files-in-vs-code
+
+other links:
+    https://stackoverflow.com/questions/61674061/prevent-visual-studio-code-to-use-auto-complete-on-plain-text/61689215#61689215
+    https://code.visualstudio.com/docs/getstarted/settings
+
+
+
+
+default commit message
+----------------------
+
+echo "more changes" > .mycommitmsg.txt
+git config --local commit.template .mycommitmsg.txt
+restart vscode for it to fully take effect
+
+link:
+    https://stackoverflow.com/questions/39445199/how-to-make-visual-studio-code-remember-previous-commit-messages
+
+
+multiple cursors            cmd + shift + alt + down
+
+split editor in group       cmd + K, cmd + shift + /            (changed from default "\" which didn't work)
+join editor in group        (same as above)
+lowercase                   cmd + shift + U
+uppercase                   cmd + shift + alt + U
+branches                    cmd + shift + m                     Git: Checkout to...
+
+
+
+git history
+-----------
+A - best way
+    Open file
+    run command: Focus on Timeline View
+    Filter: Git History only
+    click the files
+
+B - other way, cant see diffs
+    Open file
+    run command: Git: View File History         (or right click on file contents to access this command)
+    can't see file diffs though, so a bit useless
+
+
+
+vscode - comparing urls
+-----------------------
+1. open User Settings (JSON)
+2. find: partialDiff.preComparisonTextNormalizationRules
+3. enable the rules
+4. copy url1 to clipboard
+5. highlight url2
+6. PartialDiff: Compare Text With Clipboard
+7. disable partialDiff.preComparisonTextNormalizationRules afterwards
+
+
+vscode - compare branches
+-------------------------
+
+https://stackoverflow.com/questions/42112526/how-to-compare-different-branches-in-visual-studio-code
+
+This is possible (and much simpler) without GitLens, using only the Git Graph plugin.
+
+With your Git Graph open, click on the first commit you want to compare,
+and then Ctrl/Cmd + Click on your second commit. 
+Both lines will be highlighted.
+The commit details will now display all differences between A and commit B, allowing you to compare any two commits across branches or from the same branch.
+
+
+
+interactive rebase aka Git - Interactive Rebase in vscode
+---------------------------------------------------------
+
+2 options
+
+interactive rebase - GitLens
+- run command: GitLens: Git Rebase...
+- choose branch etc
+- do interactive rebase
+- choose the pick/squash stuff
+- do the rebase
+
+Use Gitlens
+Run command: GitLens: Show Commit Graph View
+Right click and you can do Rebase
+Then select interactive
+
+
+
+interactive rebase - Git Graph
+- run Git Graph
+- right click on a commit
+- rebase current branch on this Commit...
+- check the box: Launch Interactive Rebase in new Terminal
+- fill in the pick/squash stuff
+- save+quit to do rebase
+
+
+AVG - Stop annoying scanning
+----------------------------
+
+Avg settings -> Basic protection -> Detections -> Untick "Enable CyberCapture"
+
+
