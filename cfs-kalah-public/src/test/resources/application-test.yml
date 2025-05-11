@@ -1,0 +1,5 @@
+
+# Any test-time overrides go in here
+
+logging.level.org.apache.http: DEBUG
+logging.level.cfs.kalah: DEBUG

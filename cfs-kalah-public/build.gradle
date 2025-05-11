@@ -1,0 +1,52 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'groovy'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+	// We use groovy for testing - you may need the GMavenPlus Intellij plugin
+	//testImplementation 'org.codehaus.groovy:groovy-all:2.4.15'
+	testImplementation 'org.codehaus.groovy:groovy-all:2.5.8'
+
+	// We also use Spock for testing
+	testCompile platform("org.spockframework:spock-bom:2.0-M1-groovy-2.5")
+	testCompile "org.spockframework:spock-core"
+	testCompile "org.spockframework:spock-junit4" // you can remove this if your code does not rely on old JUnit 4 rules
+
+	// Wiremock for integration testing - to mock out the remote 'random person data' service
+	testCompile "com.github.tomakehurst:wiremock-jre8:2.27.0"
+}
+
+test {
+	useJUnitPlatform()
+}

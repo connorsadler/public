@@ -1,0 +1,33 @@
+
+debug: true
+
+application:
+  version: '1.1'
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cfs-kalah
+  flyway:
+    schemas: cfs_kalah
+  datasource:
+    #driverClassName: org.postgresql.Driver
+    #generate-unique-name: true
+  jpa:
+    #database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    rest:
+      detection-strategy: annotated
+  main:
+    allow-bean-definition-overriding: true
+
+
+
+settings:
+  mySetting: reservedForFutureEnhancement
+      
