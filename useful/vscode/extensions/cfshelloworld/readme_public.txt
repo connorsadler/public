@@ -1,9 +1,14 @@
 
+--------------------------------------------------------------------------------
+CFS Note
+Do NOT modify this file manually in 'public' repo - the central version is
+kept in my vscode extension dir, and copied to public via a script!
+--------------------------------------------------------------------------------
 
-You need "TODO Highlight" extension also
+
+You need "todohighlight" extension also
 
 You need these in your settings.json:
-
 
     "editor.tokenColorCustomizations": {
         // This colours every comment including javascript etc, which we dont want
@@ -47,5 +52,18 @@ You need these in your settings.json:
             "overviewRulerColor": "yellow"
         }
     ]
+
+
+--------------------------------------------------------------------------------
+Recommended keyboard shortcuts
+--------------------------------------------------------------------------------
+
+For Mac:
+
+CFS wip toggle - Shift + Cmd + W
+CFS Banner - Shift + Cmd + B
+CFS done toggle - Shift + Cmd + D
+
+
 
 
