@@ -1,0 +1,4 @@
+hello from mainfile.txt
+second line
+third line
+last line
